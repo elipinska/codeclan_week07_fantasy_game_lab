@@ -1,3 +1,4 @@
+import CombatItems.MythicalCreature;
 import CombatItems.Spell;
 import CombatItems.Weapon;
 import Players.Mages.Wizard;
@@ -10,9 +11,10 @@ public class WizardTest {
 
     private Wizard wizard1;
 
+
     @Before
     public void before() {
-        wizard1 = new Wizard("Gandalf", Spell.FIREBALL);
+        wizard1 = new Wizard("Gandalf", Spell.FIREBALL, MythicalCreature.GRIFFIN);
 
     }
 
@@ -39,6 +41,11 @@ public class WizardTest {
     @Test
     public void canCastSpell() {
         assertEquals(7, wizard1.dealSpellDamage());
+    }
+
+    @Test
+    public void canCallForDefence(){
+        assertEquals(4, wizard1.callForDefence());
     }
 
 

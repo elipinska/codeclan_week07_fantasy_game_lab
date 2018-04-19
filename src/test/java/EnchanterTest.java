@@ -1,3 +1,4 @@
+import CombatItems.MythicalCreature;
 import CombatItems.Spell;
 import CombatItems.Weapon;
 import Players.Mages.Enchanter;
@@ -12,7 +13,7 @@ public class EnchanterTest {
 
     @Before
     public void before() {
-        enchanter1 = new Enchanter("Merla", Spell.ICE_BLAST);
+        enchanter1 = new Enchanter("Merla", Spell.ICE_BLAST, MythicalCreature.UNICORN);
 
     }
 
@@ -40,6 +41,11 @@ public class EnchanterTest {
     @Test
     public void canCastSpell() {
         assertEquals(4, enchanter1.dealSpellDamage());
+    }
+
+    @Test
+    public void canCallForDefence(){
+        assertEquals(3, enchanter1.callForDefence());
     }
 
 }
