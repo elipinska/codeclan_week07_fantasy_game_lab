@@ -1,9 +1,10 @@
 package Castle;
 
 import Players.Player;
-import Surprises.ISurprise;
+import Surprises.*;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Room {
 
@@ -16,6 +17,18 @@ public class Room {
         this.occupants = new ArrayList<>();
         this.surprise = surprise;
 
+    }
+
+    public Room(String name) {
+        this.name = name;
+        this.occupants = new ArrayList<>();
+        Random random = new Random();
+        int randomNo = random.nextInt(2);
+        if (randomNo == 0) {
+            this.surprise = new Treasure(TreasureType.getRandomTreasureType());
+        } else  {
+            this.surprise = new Enemy(EnemyType.getRandomEnemyType());
+        }
     }
 
     public String getName(){

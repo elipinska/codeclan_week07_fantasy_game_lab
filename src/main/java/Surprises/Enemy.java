@@ -34,7 +34,7 @@ public class Enemy implements ISurprise {
     }
 
     public String encounterSurprise() {
-        return "You hear something moving in the corner of the room...";
+        return "You hear something moving in the corner of the room... \n";
     }
 
     public Boolean isTreasure() {

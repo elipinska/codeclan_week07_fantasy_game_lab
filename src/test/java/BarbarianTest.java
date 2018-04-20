@@ -26,8 +26,8 @@ public class BarbarianTest {
         room1 = new Room("Bedchamber", treasure);
         room2 = new Room("Hallway", enemy);
 
-
     }
+
 
     @Test
     public void hasName() {

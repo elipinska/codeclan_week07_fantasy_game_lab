@@ -52,7 +52,7 @@ public abstract class Player {
             Treasure treasure = (Treasure) surprise;
             pack.add(treasure);
             currentRoom.removeSurprise();
-            return "You've collected some " + (treasure.getName() + "\n");
+            return "You've collected some " + (treasure.getName() + ".\n");
 
         } else {
             return "There's no treasure in this room!";

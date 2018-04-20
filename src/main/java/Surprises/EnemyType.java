@@ -1,5 +1,7 @@
 package Surprises;
 
+import java.util.Random;
+
 public enum EnemyType {
     OGRE("ogre", 5, 10),
     GOBLIN("goblin", 3, 6);
@@ -24,5 +26,10 @@ public enum EnemyType {
 
     public int getHp() {
         return hp;
+    }
+
+    public static EnemyType getRandomEnemyType() {
+        Random random = new Random();
+        return values()[random.nextInt(values().length)];
     }
 }
