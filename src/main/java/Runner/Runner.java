@@ -75,9 +75,9 @@ public class Runner {
 
         castle.getRoomList().get(0).addPlayerToRoom(player1);
 
-        while (true) {
-            System.out.println("You are in ");
-        }
+//        while (true) {
+//            System.out.println("You are in ");
+//        }
 
 
 
