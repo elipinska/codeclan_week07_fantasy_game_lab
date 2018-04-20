@@ -40,21 +40,32 @@ public abstract class Player {
 
     public void enterRoom(Room room) {
         room.addPlayerToRoom(this);
-        this.currentRoom = room;
+    }
+
+    public void setCurrentRoom(Room currentRoom) {
+        this.currentRoom = currentRoom;
     }
 
     public String collectTreasure() {
         ISurprise surprise = currentRoom.getSurprise();
         if (surprise.isTreasure()) {
-            pack.add((Treasure) surprise);
-            return "You've collected some " + ((Treasure) surprise).getName();
+            Treasure treasure = (Treasure) surprise;
+            pack.add(treasure);
+            currentRoom.removeSurprise();
+            return "You've collected some " + (treasure.getName() + "\n");
+
         } else {
             return "There's no treasure in this room!";
         }
     }
 
     public String searchRoom() {
-        return currentRoom.getSurprise().encounterSurprise();
+
+        if (currentRoom.getSurprise() == null) {
+            return "The room appears to be empty.\n";
+        } else {
+            return currentRoom.getSurprise().encounterSurprise();
+        }
     }
 
     public Room getCurrentRoom() {

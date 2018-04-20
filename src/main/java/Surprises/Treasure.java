@@ -25,7 +25,7 @@ public class Treasure implements ISurprise {
     }
 
     public String encounterSurprise() {
-        return "You have found a locked wooden chest";
+        return "You have found a locked wooden chest!";
     }
 
     public Boolean isTreasure() {

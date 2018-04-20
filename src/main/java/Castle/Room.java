@@ -24,6 +24,7 @@ public class Room {
 
     public void addPlayerToRoom(Player player) {
         occupants.add(player);
+        player.setCurrentRoom(this);
     }
 
     public ArrayList<Player> getOccupants() {
@@ -32,5 +33,9 @@ public class Room {
 
     public ISurprise getSurprise() {
         return surprise;
+    }
+
+    public void removeSurprise() {
+        surprise = null;
     }
 }

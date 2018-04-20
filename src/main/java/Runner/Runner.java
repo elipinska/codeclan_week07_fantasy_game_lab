@@ -8,6 +8,7 @@ import Players.Fighters.Knight;
 import Players.Player;
 import Surprises.*;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -21,6 +22,8 @@ public class Runner {
         String weaponType;
         Weapon weapon = null;
         Player player1 = null;
+        Boolean exit = false;
+        int nextRoomNo = 0;
         ISurprise surprise1 = new Treasure(TreasureType.GOLD);
         ISurprise surprise2 = new Enemy(EnemyType.OGRE);
         ISurprise surprise3 = new Treasure(TreasureType.CHOCOLATE);
@@ -73,11 +76,38 @@ public class Runner {
                             break;
         }
 
-        castle.getRoomList().get(0).addPlayerToRoom(player1);
+        castle.getRoomList().get(nextRoomNo).addPlayerToRoom(player1);
+        nextRoomNo +=1;
 
-//        while (true) {
-//            System.out.println("You are in ");
-//        }
+
+        while (exit == false) {
+            System.out.println("You are in " + player1.getCurrentRoom().getName() + ". What would you like to do?");
+            ArrayList<String> availableActions = new ArrayList();
+            availableActions.addAll(Arrays.asList("search", "walk"));
+            System.out.println("Available actions: " + availableActions);
+            String action = scan.next();
+
+            switch (action) {
+                case "search":
+                    System.out.println(player1.searchRoom());
+                    if (player1.getCurrentRoom().getSurprise() != null && player1.getCurrentRoom().getSurprise().isTreasure()) {
+                        System.out.println("Would you like to open it? y/n");
+                       do {
+                           action = scan.next();
+                       } while (!(action).matches("y|n"));
+                       if ((action).equals("y")) {
+                           System.out.println(player1.collectTreasure());
+                       }
+                    }
+                              break;
+                case "walk": player1.enterRoom(castle.getRoomList().get(nextRoomNo));
+                                  nextRoomNo += 1;
+                                break;
+            }
+
+
+
+        }
 
 
 
@@ -85,4 +115,6 @@ public class Runner {
 
 
     }
+
+
 }
