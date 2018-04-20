@@ -1,19 +1,21 @@
 package Castle;
 
 import Players.Player;
-import Surprises.Enemy;
-import Surprises.Treasure;
+import Surprises.ISurprise;
 
 import java.util.ArrayList;
 
-public abstract class Room {
+public class Room {
 
     private String name;
     private ArrayList<Player> occupants;
+    private ISurprise surprise;
 
-    public Room(String name) {
+    public Room(String name, ISurprise surprise) {
         this.name = name;
         this.occupants = new ArrayList<>();
+        this.surprise = surprise;
+
     }
 
     public String getName(){
@@ -26,5 +28,9 @@ public abstract class Room {
 
     public ArrayList<Player> getOccupants() {
         return occupants;
+    }
+
+    public ISurprise getSurprise() {
+        return surprise;
     }
 }

@@ -24,8 +24,8 @@ public abstract class Mage extends Player implements ICast {
         return mythicalCreature.getShieldValue();
     }
 
-    public void attack(Enemy enemy) {
-        enemy.setHp(enemy.getHP() - dealSpellDamage());
-    }
+//    public void attack(Enemy enemy) {
+//        enemy.setHp(enemy.getHP() - dealSpellDamage());
+//    }
 
 }

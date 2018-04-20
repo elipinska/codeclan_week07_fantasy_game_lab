@@ -2,42 +2,50 @@ package Surprises;
 
 import Players.Player;
 
-public class Enemy {
+public class Enemy implements ISurprise {
 
-    private String name;
     private String type;
+    private EnemyType enemyType;
     private int damage;
     private int hp;
 
 
-    public Enemy(String name, String type, int damage, int hp) {
-        this.name = name;
-        this.type = type;
-        this.damage = damage;
-        this.hp = hp;
+    public Enemy(EnemyType enemyType) {
+        this.type = enemyType.getType();
+        this.enemyType = enemyType;
+        this.damage = enemyType.getDamage();
+        this.hp = enemyType.getHp();
     }
 
     public int getDamage() {
         return this.damage;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public String getType() {
         return type;
+    }
+
+    public EnemyType getEnemyType() {
+        return enemyType;
     }
 
     public int getHP(){
         return hp;
     }
 
-    public void setHp(int hp) {
-        this.hp = hp;
+    public String encounterSurprise() {
+        return "You hear something moving in the corner of the room...";
     }
 
-    public void attackHero(Player player) {
+    public Boolean isTreasure() {
+        return false;
+    }
 
+    public Boolean isEnemy() {
+        return true;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
     }
 }

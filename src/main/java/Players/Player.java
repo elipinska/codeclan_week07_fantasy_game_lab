@@ -1,24 +1,25 @@
 package Players;
 
-import Castle.DangerRoom;
 import Castle.Room;
-import Castle.TreasureRoom;
-import Surprises.Enemy;
+import Surprises.ISurprise;
 import Surprises.Treasure;
+
 
 import java.util.ArrayList;
 
 public abstract class Player {
-     String name;
-     int hp;
-     int level;
-     ArrayList<Treasure> pack;
+     private String name;
+     private int hp;
+     private int level;
+     private ArrayList<Treasure> pack;
+     private Room currentRoom;
 
     public Player(String name) {
         this.hp = 25;
         this.level = 1;
         this.pack = new ArrayList<>();
         this.name = name;
+        this.currentRoom = null;
     }
 
     public String getName() {
@@ -39,19 +40,25 @@ public abstract class Player {
 
     public void enterRoom(Room room) {
         room.addPlayerToRoom(this);
+        this.currentRoom = room;
     }
 
-    public void searchForTreasure(Room room) {
-        if (room.getClass() == TreasureRoom.class) {
-            TreasureRoom treasureRoom = (TreasureRoom) room;
-            collectTreasure(treasureRoom.getTreasure());
+    public String collectTreasure() {
+        ISurprise surprise = currentRoom.getSurprise();
+        if (surprise.isTreasure()) {
+            pack.add((Treasure) surprise);
+            return "You've collected some " + ((Treasure) surprise).getName();
+        } else {
+            return "There's no treasure in this room!";
         }
     }
 
-    public void collectTreasure(Treasure treasure) {
-        pack.add(treasure);
+    public String searchRoom() {
+        return currentRoom.getSurprise().encounterSurprise();
     }
 
-
- }
+    public Room getCurrentRoom() {
+        return currentRoom;
+    }
+}
 

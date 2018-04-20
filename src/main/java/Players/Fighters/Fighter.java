@@ -1,10 +1,9 @@
 package Players.Fighters;
 
-import Castle.DangerRoom;
-import Castle.Room;
 import CombatItems.Weapon;
 import Players.Player;
 import Surprises.Enemy;
+import Surprises.ISurprise;
 
 public abstract class Fighter extends Player implements IFight {
 
@@ -23,16 +22,16 @@ public abstract class Fighter extends Player implements IFight {
         return getWeapon().getDamage();
     }
 
-    public void attack(Enemy enemy) {
-        enemy.setHp(enemy.getHP() - dealDamage());
-    }
-
-    public void searchForEnemies(Room room){
-        if (room.getClass() == DangerRoom.class) {
-            DangerRoom dangerRoom = (DangerRoom) room;
-            attack(dangerRoom.getEnemy());
+    public String attack() {
+        ISurprise surprise = getCurrentRoom().getSurprise();
+        if(surprise.isEnemy()) {
+            ((Enemy) surprise).setHp(((Enemy) surprise).getHP() - dealDamage());
+            return "You've dealt a nasty blow!";
+        } else {
+            return "What are you swinging your weapon for? There's no one here!";
         }
     }
+
 
 
 }
