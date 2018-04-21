@@ -25,7 +25,6 @@ public class BarbarianTest {
         enemy = new Enemy(EnemyType.GOBLIN);
         room1 = new Room("Bedchamber", treasure);
         room2 = new Room("Hallway", enemy);
-
     }
 
 
@@ -64,19 +63,19 @@ public class BarbarianTest {
     @Test
     public void barbarianCanSearchRoom__FindsTreasure() {
         barbarian1.enterRoom(room1);
-        assertEquals("You have found a locked wooden chest", barbarian1.searchRoom());
+        assertEquals("You have found a locked wooden chest!", barbarian1.searchRoom());
     }
 
     @Test
     public void barbarianCanSearchRoom__FindsEnemy() {
         barbarian1.enterRoom(room2);
-        assertEquals("You hear something moving in the corner of the room...", barbarian1.searchRoom());
+        assertEquals("You hear something moving in the corner of the room... \n", barbarian1.searchRoom());
     }
 
     @Test
     public void barbarianCanCollectTreasure() {
         barbarian1.enterRoom(room1);
-        assertEquals("You've collected some chocolate", barbarian1.collectTreasure());
+        assertEquals("You've collected some chocolate.\n", barbarian1.collectTreasure());
         assertEquals(1, barbarian1.getPack().size());
     }
 

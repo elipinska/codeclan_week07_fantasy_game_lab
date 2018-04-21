@@ -48,4 +48,9 @@ public class Enemy implements ISurprise {
     public void setHp(int hp) {
         this.hp = hp;
     }
+
+    public String attack(Player player) {
+        (player).setHp((player).getHp() - getDamage());
+        return "The enemy strikes!";
+    }
 }

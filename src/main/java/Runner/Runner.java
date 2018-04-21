@@ -6,6 +6,7 @@ import Players.Fighters.Barbarian;
 import Players.Fighters.Dwarf;
 import Players.Fighters.Knight;
 import Players.Player;
+import Combat.Combat;
 import Surprises.*;
 
 import java.lang.reflect.Array;
@@ -87,17 +88,18 @@ public class Runner {
         nextRoomNo +=1;
 
 
-        while (exit == false) {
+        while (!exit) {
             System.out.println("You are in " + player1.getCurrentRoom().getName() + ". What would you like to do?");
             ArrayList<String> availableActions = new ArrayList();
-            availableActions.addAll(Arrays.asList("search", "next room", "quit", "view pack"));
+            availableActions.addAll(Arrays.asList("search", "next room", "view pack", "quit"));
             System.out.println("Available actions: " + availableActions);
             String action = scan.nextLine();
 
             switch (action) {
                 case "search":
                     System.out.println(player1.searchRoom());
-                    if (player1.getCurrentRoom().getSurprise() != null && player1.getCurrentRoom().getSurprise().isTreasure()) {
+                    ISurprise surprise = player1.getCurrentRoom().getSurprise();
+                    if (surprise != null && surprise.isTreasure()) {
                         System.out.println("Would you like to open it? y/n");
                        do {
                            action = scan.nextLine();
@@ -105,6 +107,9 @@ public class Runner {
                        if ((action).equals("y")) {
                            System.out.println(player1.collectTreasure());
                        }
+                    } else if (surprise != null && surprise.isEnemy()) {
+                        Combat combat = new Combat();
+                        System.out.println(combat.commenceFight(player1, (Enemy) surprise));
                     }
                               break;
                 case "next room": if (nextRoomNo < castle.getRoomList().size()) {
@@ -126,7 +131,9 @@ public class Runner {
                             break;
             }
 
-
+        if (player1.getHp() <= 0) {
+                exit = true;
+        }
 
         }
 
