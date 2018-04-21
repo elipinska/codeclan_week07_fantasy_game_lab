@@ -89,13 +89,14 @@ public class BarbarianTest {
     @Test
     public void barbarianCanFightEnemy() {
         barbarian1.enterRoom(room2);
-        assertEquals("You've dealt a nasty blow!", barbarian1.attack());
-        assertEquals(4, ((Enemy) room2.getSurprise()).getHP());
+        assertEquals("You've dealt a nasty blow!", barbarian1.attack(enemy));
+        assertEquals(4, ((Enemy) room2.getSurprise()).getHp());
     }
 
+
+
     @Test
-    public void barbarianCantAttackIfTheresNoEnemy() {
-        barbarian1.enterRoom(room1);
-        assertEquals("What are you swinging your weapon for? There's no one here!", barbarian1.attack());
+    public void barbarianHasBattleCry() {
+        assertEquals("AAAAAGH!", barbarian1.battleCry());
     }
 }

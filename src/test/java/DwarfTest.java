@@ -39,4 +39,9 @@ public class DwarfTest {
     public void canFight() {
         assertEquals(3, dwarf1.dealDamage());
     }
+
+    @Test
+    public void dwarfHasBattleCry() {
+        assertEquals("Baruk Khazâd! Khazâd ai-mênu!", dwarf1.battleCry());
+    }
 }

@@ -8,5 +8,7 @@ public class Dwarf extends Fighter {
         super(name, weapon);
     }
 
-
+    public String battleCry() {
+        return "\"Baruk Khazâd! Khazâd ai-mênu!\"";
+    }
 }

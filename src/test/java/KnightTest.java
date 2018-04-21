@@ -40,4 +40,9 @@ public class KnightTest {
     public void canFight() {
         assertEquals(5, knight1.dealDamage());
     }
+
+    @Test
+    public void knightHasBattleCry() {
+        assertEquals("For king and country!", knight1.battleCry());
+    }
 }

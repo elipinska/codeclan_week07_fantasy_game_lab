@@ -25,8 +25,8 @@ public class EnemyTest {
 
     @Test
     public void enemyHasHP() {
-        assertEquals(6, enemy1.getHP());
-        assertEquals(10, enemy2.getHP());
+        assertEquals(6, enemy1.getHp());
+        assertEquals(10, enemy2.getHp());
     }
 
 

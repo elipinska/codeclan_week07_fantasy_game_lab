@@ -10,17 +10,20 @@ public class Combat {
 
 
 
-    public String commenceFight(Player player1, Enemy enemy1) {
-        System.out.println("You attack the nasty " + enemy1.getType() + "!");
+    public String commenceFight(Player player1) {
+        Enemy enemy1 = (Enemy) player1.getCurrentRoom().getSurprise();
+        System.out.println("You attack an " + enemy1.getType() + "!");
         String result = "";
         while ((player1.getHp() > 0) && (enemy1.getHp() > 0)) {
-
-            ((Fighter) player1).attack(enemy1);
-            enemy1.attack(player1);
+            System.out.println(((Fighter) player1).battleCry() );
+            System.out.println(((Fighter) player1).attack(enemy1));
             if (enemy1.getHp() <= 0) {
                 result = "You've slayed the beast! HP left: " + player1.getHp() + "\n";
-                break;
-            } else if (player1.getHp() <=0) {
+                player1.getCurrentRoom().removeSurprise();
+                break;}
+            System.out.println(enemy1.getBattleCry());
+            System.out.println(enemy1.attack(player1));
+            if (player1.getHp() <=0) {
                 result =  "You've been defeated! Game over.";
                 break;
             }

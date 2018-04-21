@@ -8,4 +8,7 @@ public class Barbarian extends Fighter {
         super(name, weapon);
     }
 
+    public String battleCry() {
+        return "\"AAAAAGH!\"";
+    }
 }

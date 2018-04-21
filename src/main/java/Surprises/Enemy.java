@@ -2,12 +2,15 @@ package Surprises;
 
 import Players.Player;
 
+import java.util.Random;
+
 public class Enemy implements ISurprise {
 
     private String type;
     private EnemyType enemyType;
     private int damage;
     private int hp;
+    private String battleCry;
 
 
     public Enemy(EnemyType enemyType) {
@@ -15,6 +18,8 @@ public class Enemy implements ISurprise {
         this.enemyType = enemyType;
         this.damage = enemyType.getDamage();
         this.hp = enemyType.getHp();
+        this.battleCry = enemyType.getBattleCry();
+
     }
 
     public int getDamage() {
@@ -27,6 +32,10 @@ public class Enemy implements ISurprise {
 
     public EnemyType getEnemyType() {
         return enemyType;
+    }
+
+    public String getBattleCry() {
+        return battleCry;
     }
 
     public int getHp(){
@@ -49,8 +58,13 @@ public class Enemy implements ISurprise {
         this.hp = hp;
     }
 
+    public int dealRandomDamage() {
+        Random rand = new Random();
+        return rand.nextInt(getDamage() + 1);
+    }
+
     public String attack(Player player) {
-        (player).setHp((player).getHp() - getDamage());
+        (player).setHp((player).getHp() - dealRandomDamage());
         return "The enemy strikes!";
     }
 }

@@ -111,7 +111,7 @@ public class Runner {
                        }
                     } else if (surprise != null && surprise.isEnemy()) {
                         Combat combat = new Combat();
-                        System.out.println(combat.commenceFight(player1, (Enemy) surprise));
+                        System.out.println(combat.commenceFight(player1));
                     }
                               break;
                 case "next room": if (nextRoomNo < castle.getRoomList().size()) {
