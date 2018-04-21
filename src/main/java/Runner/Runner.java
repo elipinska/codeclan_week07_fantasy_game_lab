@@ -93,7 +93,7 @@ public class Runner {
         while (!exit) {
             System.out.println("You are in " + player1.getCurrentRoom().getName() + ". What would you like to do?");
             ArrayList<String> availableActions = new ArrayList();
-            availableActions.addAll(Arrays.asList("search", "next room", "view pack", "check health", "quit"));
+            availableActions.addAll(Arrays.asList("search", "next room", "view pack", "check health", "eat chocolate", "quit"));
             System.out.println("Available actions: " + availableActions);
             String action = scan.nextLine();
 
@@ -120,15 +120,15 @@ public class Runner {
                                 } else {
                                     System.out.println("You've found the exit from the castle! Game over.");
                                     System.out.println("Items collected:");
-                                    System.out.println("-------------------------");
+                                    System.out.println("-------------------------------");
                                     ArrayList<Treasure> pack = player1.getPack();
                                     int score = 0;
                                     for (Treasure item:pack) {
                                         System.out.println("Item: " + item.getName() + ", value: " + item.getValue() + "gp;");
                                         score += item.getValue();
                                     }
-                                    System.out.println("-------------------------");
-                                    System.out.println("Overal score: " + score);
+                                    System.out.println("-------------------------------");
+                                    System.out.println("Overall score: " + score + "gp");
                                     exit = true;
                                 }
                                 break;
@@ -142,6 +142,8 @@ public class Runner {
                                     break;
                 case "check health":
                                     System.out.println("Your health points: " + player1.getHp() + "/" + maxHp + "\n");
+                                    break;
+                case "eat chocolate": System.out.println(player1.eatChocolate());
                                     break;
                 case "quit": exit = true;
                             break;

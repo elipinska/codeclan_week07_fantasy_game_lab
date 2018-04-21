@@ -11,6 +11,7 @@ public class Enemy implements ISurprise {
     private int damage;
     private int hp;
     private String battleCry;
+    private Treasure trophy;
 
 
     public Enemy(EnemyType enemyType) {
@@ -19,6 +20,7 @@ public class Enemy implements ISurprise {
         this.damage = enemyType.getDamage();
         this.hp = enemyType.getHp();
         this.battleCry = enemyType.getBattleCry();
+        this.trophy = enemyType.getTrophy();
 
     }
 
@@ -66,5 +68,9 @@ public class Enemy implements ISurprise {
     public String attack(Player player) {
         (player).setHp((player).getHp() - dealRandomDamage());
         return "The enemy strikes!";
+    }
+
+    public Treasure getTrophy() {
+        return trophy;
     }
 }
