@@ -25,6 +25,7 @@ public class Runner {
         Player player1 = null;
         Boolean exit = false;
         int nextRoomNo = 0;
+        int maxHp = 0;
 
         Room startRoom = new Room("Great Hall");
         Room treasureRoom1 = new Room("Armoury");
@@ -84,6 +85,7 @@ public class Runner {
                             break;
         }
 
+        maxHp = player1.getHp();
         castle.getRoomList().get(nextRoomNo).addPlayerToRoom(player1);
         nextRoomNo +=1;
 
@@ -91,7 +93,7 @@ public class Runner {
         while (!exit) {
             System.out.println("You are in " + player1.getCurrentRoom().getName() + ". What would you like to do?");
             ArrayList<String> availableActions = new ArrayList();
-            availableActions.addAll(Arrays.asList("search", "next room", "view pack", "quit"));
+            availableActions.addAll(Arrays.asList("search", "next room", "view pack", "check health", "quit"));
             System.out.println("Available actions: " + availableActions);
             String action = scan.nextLine();
 
@@ -116,7 +118,18 @@ public class Runner {
                                 player1.enterRoom(castle.getRoomList().get(nextRoomNo));
                                   nextRoomNo += 1;
                                 } else {
-                                    System.out.println("You have reached a locked door! \n");
+                                    System.out.println("You've found the exit from the castle! Game over.");
+                                    System.out.println("Items collected:");
+                                    System.out.println("-------------------------");
+                                    ArrayList<Treasure> pack = player1.getPack();
+                                    int score = 0;
+                                    for (Treasure item:pack) {
+                                        System.out.println("Item: " + item.getName() + ", value: " + item.getValue() + "gp;");
+                                        score += item.getValue();
+                                    }
+                                    System.out.println("-------------------------");
+                                    System.out.println("Overal score: " + score);
+                                    exit = true;
                                 }
                                 break;
                 case "view pack":
@@ -126,6 +139,9 @@ public class Runner {
                                         System.out.println("Item: " + item.getName() + ", value: " + item.getValue() + "gp;");
                                     }
                                     System.out.println("\n");
+                                    break;
+                case "check health":
+                                    System.out.println("Your health points: " + player1.getHp() + "/" + maxHp + "\n");
                                     break;
                 case "quit": exit = true;
                             break;
@@ -141,8 +157,6 @@ public class Runner {
 
 
 
-
     }
-
 
 }

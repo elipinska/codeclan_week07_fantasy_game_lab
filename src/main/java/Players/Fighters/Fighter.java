@@ -23,7 +23,7 @@ public abstract class Fighter extends Player implements IFight {
     }
 
     public String attack(Enemy enemy) {
-        (enemy).setHp((enemy).getHP() - dealDamage());
+        (enemy).setHp((enemy).getHp() - dealDamage());
         return "You've dealt a nasty blow!";
     }
 

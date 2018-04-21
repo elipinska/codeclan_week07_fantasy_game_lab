@@ -29,7 +29,7 @@ public class Enemy implements ISurprise {
         return enemyType;
     }
 
-    public int getHP(){
+    public int getHp(){
         return hp;
     }
 
