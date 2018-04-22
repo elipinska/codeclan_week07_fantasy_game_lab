@@ -2,36 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ad62ae8-28ef-48bc-9aca-bc798610c9b4" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Npcs/Npc.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Castle/Room.class" afterPath="$PROJECT_DIR$/out/production/classes/Castle/Room.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Combat/Combat.class" afterPath="$PROJECT_DIR$/out/production/classes/Combat/Combat.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/CombatItems/HealingTool.class" afterPath="$PROJECT_DIR$/out/production/classes/CombatItems/HealingTool.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Players/Healers/Cleric.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Players/Healers/Healer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Players/Healers/IHeal.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Players/Player.class" afterPath="$PROJECT_DIR$/out/production/classes/Players/Player.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Runner/Runner.class" afterPath="$PROJECT_DIR$/out/production/classes/Runner/Runner.class" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/BarbarianTest.class" afterPath="$PROJECT_DIR$/out/test/classes/BarbarianTest.class" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/ClericTest.class" afterPath="$PROJECT_DIR$/out/test/classes/ClericTest.class" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/RoomTest.class" afterPath="$PROJECT_DIR$/out/test/classes/RoomTest.class" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Castle/Room.java" afterPath="$PROJECT_DIR$/src/main/java/Castle/Room.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Combat/Combat.java" afterPath="$PROJECT_DIR$/src/main/java/Combat/Combat.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CombatItems/HealingTool.java" afterPath="$PROJECT_DIR$/src/main/java/CombatItems/HealingTool.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CombatItems/Weapon.java" afterPath="$PROJECT_DIR$/src/main/java/CombatItems/Weapon.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Players/Healers/Cleric.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Players/Healers/Healer.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Players/Healers/IHeal.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Players/Player.java" afterPath="$PROJECT_DIR$/src/main/java/Players/Player.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Runner/Runner.java" afterPath="$PROJECT_DIR$/src/main/java/Runner/Runner.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Surprises/Enemy.java" afterPath="$PROJECT_DIR$/src/main/java/Surprises/Enemy.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Surprises/Treasure.java" afterPath="$PROJECT_DIR$/src/main/java/Surprises/Treasure.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BarbarianTest.java" afterPath="$PROJECT_DIR$/src/test/java/BarbarianTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CastleTest.java" afterPath="$PROJECT_DIR$/src/test/java/CastleTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ClericTest.java" afterPath="$PROJECT_DIR$/src/test/java/ClericTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DwarfTest.java" afterPath="$PROJECT_DIR$/src/test/java/DwarfTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/EnemyTest.java" afterPath="$PROJECT_DIR$/src/test/java/EnemyTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/RoomTest.java" afterPath="$PROJECT_DIR$/src/test/java/RoomTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -129,7 +100,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Cleric.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Cleric.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Npcs/Healers/Cleric.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="355">
@@ -137,6 +108,18 @@
               <folding>
                 <element signature="e#116#117#0" expanded="true" />
                 <element signature="e#143#144#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Runner.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Runner/Runner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2091">
+              <caret line="122" column="84" lean-forward="false" selection-start-line="122" selection-start-column="84" selection-end-line="122" selection-end-column="84" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -161,16 +144,6 @@
                 <element signature="e#889#890#0" expanded="true" />
                 <element signature="e#974#975#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HealingTool.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CombatItems/HealingTool.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -542,7 +515,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Surprises/Enemy.java" />
         <option value="$PROJECT_DIR$/src/main/java/Surprises/Treasure.java" />
         <option value="$PROJECT_DIR$/src/main/java/Castle/Room.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Runner/Runner.java" />
         <option value="$PROJECT_DIR$/src/main/java/CombatItems/HealingTool.java" />
         <option value="$PROJECT_DIR$/src/main/java/Players/Player.java" />
         <option value="$PROJECT_DIR$/src/test/java/BarbarianTest.java" />
@@ -551,6 +523,7 @@
         <option value="$PROJECT_DIR$/src/test/java/ClericTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/CombatItems/Weapon.java" />
         <option value="$PROJECT_DIR$/src/main/java/Npcs/Healers/Cleric.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Runner/Runner.java" />
       </list>
     </option>
   </component>
@@ -1475,16 +1448,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Runner/Runner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="122" column="85" lean-forward="false" selection-start-line="122" selection-start-column="85" selection-end-line="122" selection-end-column="85" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CombatItems/HealingTool.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
@@ -1586,6 +1549,16 @@
           <folding>
             <element signature="e#116#117#0" expanded="true" />
             <element signature="e#143#144#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Runner/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2091">
+          <caret line="122" column="84" lean-forward="false" selection-start-line="122" selection-start-column="84" selection-end-line="122" selection-end-column="84" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

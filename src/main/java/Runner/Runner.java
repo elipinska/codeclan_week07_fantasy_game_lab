@@ -120,7 +120,7 @@ public class Runner {
             switch (action) {
                 case "ask cleric for healing": Cleric cleric = (Cleric) player1.getCurrentRoom().getNpcOccupants().get(0);
                                                System.out.println(cleric.heal(player1));
-                                               player1.getCurrentRoom().removeNpc();;
+                                               player1.getCurrentRoom().removeNpc();
                                                availableActions.remove("ask cleric for healing");
                                                break;
                 case "search room":
