@@ -27,7 +27,7 @@ public class Cleric extends Healer {
     }
 
     public String meetPlayer() {
-        return "You see a hooded figure of a cleric. He holds a wooden sign saying \"Will heal for 100gp. Gems not accepted, sorry\"";
+        return "You see a hooded figure of a cleric. He holds a wooden sign saying \"Will heal for 100gp. Gems or tropies not accepted, sorry\"";
     }
 
 
