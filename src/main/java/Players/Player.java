@@ -95,10 +95,22 @@ public abstract class Player {
                 } else {
                     setHp(hp + 5);
                 }
-                result = "You've eaten some chocolate and regained some health.\n";
+                result = "You've eaten chocolate and regained some health.\n";
                 break;
             }
 
+        }
+        return result;
+    }
+
+    public Boolean canPayForHealing() {
+        Boolean result = false;
+        for (Treasure item:pack) {
+            if (item.getName() == "gold")  {
+                pack.remove(item);
+                result = true;
+                break;
+            }
         }
         return result;
     }

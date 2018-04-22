@@ -2,10 +2,10 @@ package CombatItems;
 
 public enum Weapon {
 
-    SWORD(10),
-    AXE(8),
-    CLUB(6),
-    BOW(7);
+    SWORD(13),
+    AXE(11),
+    CLUB(9),
+    BOW(8);
 
     private final int damage;
 

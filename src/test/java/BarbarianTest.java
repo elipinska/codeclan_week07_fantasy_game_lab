@@ -50,13 +50,13 @@ public class BarbarianTest {
 
     @Test
     public void canFight() {
-        assertEquals(2, barbarian1.dealDamage());
+        assertEquals(6, barbarian1.dealDamage());
     }
 
     @Test
     public void barbarianCanEnterRoom() {
         barbarian1.enterRoom(room1);
-        assertEquals(1, room1.getOccupants().size());
+        assertEquals(1, room1.getPlayerOccupants().size());
         assertEquals(room1, barbarian1.getCurrentRoom());
     }
 
@@ -86,17 +86,27 @@ public class BarbarianTest {
         assertEquals(0, barbarian1.getPack().size());
     }
 
-    @Test
-    public void barbarianCanFightEnemy() {
-        barbarian1.enterRoom(room2);
-        assertEquals("You've dealt a nasty blow!", barbarian1.attack(enemy));
-        assertEquals(4, ((Enemy) room2.getSurprise()).getHp());
-    }
-
+    //Damage has been randomised, so the result will be different every time
+//    @Test
+//    public void barbarianCanFightEnemy() {
+//        barbarian1.enterRoom(room2);
+//        assertEquals("You've dealt a nasty blow!", barbarian1.attack(enemy));
+//        assertEquals(7, ((Enemy) room2.getSurprise()).getHp());
+//    }
 
 
     @Test
     public void barbarianHasBattleCry() {
-        assertEquals("AAAAAGH!", barbarian1.battleCry());
+        assertEquals("\"AAAAAGH!\"", barbarian1.battleCry());
+    }
+
+    @Test
+    public void babarianCanPayForHealing__OneGoldTreasureShouldRemainInPack() {
+        Treasure treasure1 = new Treasure(TreasureType.GOLD);
+        Treasure treasure2 = new Treasure(TreasureType.GOLD);
+        barbarian1.addToPack(treasure1);
+        barbarian1.addToPack(treasure2);
+        assertEquals(true, barbarian1.canPayForHealing());
+        assertEquals(1, barbarian1.getPack().size());
     }
 }

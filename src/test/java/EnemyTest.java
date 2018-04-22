@@ -19,14 +19,14 @@ public class EnemyTest {
 
     @Test
     public void enemyHasType() {
-        assertEquals("goblin", enemy1.getType());
-        assertEquals("ogre", enemy2.getType());
+        assertEquals("a goblin", enemy1.getType());
+        assertEquals("an ogre", enemy2.getType());
     }
 
     @Test
     public void enemyHasHP() {
-        assertEquals(6, enemy1.getHp());
-        assertEquals(10, enemy2.getHp());
+        assertEquals(8, enemy1.getHp());
+        assertEquals(12, enemy2.getHp());
     }
 
 

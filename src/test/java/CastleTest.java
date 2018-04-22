@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 import static org.junit.Assert.assertEquals;
 
@@ -39,6 +40,8 @@ public class CastleTest {
     public void CastleHasTwoRooms() {
         assertEquals(2, castle.getRoomList().size());
     }
+
+
 
 
 }

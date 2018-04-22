@@ -2,6 +2,8 @@ package Runner;
 
 import Castle.*;
 import CombatItems.Weapon;
+import Npcs.Healers.Cleric;
+import Npcs.Npc;
 import Players.Fighters.Barbarian;
 import Players.Fighters.Dwarf;
 import Players.Fighters.Knight;
@@ -12,6 +14,7 @@ import Surprises.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Runner {
@@ -28,20 +31,31 @@ public class Runner {
         int maxHp = 0;
 
         Room startRoom = new Room("Great Hall");
-        Room treasureRoom1 = new Room("Armoury");
-        Room dangerRoom1 = new Room("Kitchen");
-        Room surpriseRoom1 = new Room("Pantry");
-        Room surpriseRoom2 = new Room("Storeroom");
-        Room surpriseRoom3 = new Room("Main stairs");
-        Room surpriseRoom4 = new Room("Small bedchamber");
-        Room surpriseRoom5 = new Room("Lavatory");
-        Room surpriseRoom6 = new Room("Large bedchamber");
-        Room surpriseRoom7 = new Room("Narrow staircase");
-        Room surpriseRoom8 = new Room("Dungeon");
-        Room surpriseRoom9 = new Room("Chapel");
+        Room surpriseRoom1 = new Room("Armoury");
+        Room surpriseRoom2 = new Room("Kitchen");
+        Room surpriseRoom3 = new Room("Pantry");
+        Room surpriseRoom4 = new Room("Storeroom");
+        Room surpriseRoom5 = new Room("Main stairs");
+        Room surpriseRoom6 = new Room("Small bedchamber");
+        Room surpriseRoom7 = new Room("Lavatory");
+        Room surpriseRoom8 = new Room("Large bedchamber");
+        Room surpriseRoom9 = new Room("Narrow staircase");
+        Room surpriseRoom10 = new Room("Dungeon");
+        Room surpriseRoom11 = new Room("Chapel");
         ArrayList<Room> roomList = new ArrayList<>();
-        roomList.addAll(Arrays.asList(startRoom, treasureRoom1, dangerRoom1, surpriseRoom1, surpriseRoom2, surpriseRoom3, surpriseRoom4, surpriseRoom5, surpriseRoom6, surpriseRoom7, surpriseRoom8, surpriseRoom9));
+        roomList.addAll(Arrays.asList(startRoom, surpriseRoom1, surpriseRoom2, surpriseRoom3, surpriseRoom4, surpriseRoom5, surpriseRoom6, surpriseRoom7, surpriseRoom8, surpriseRoom9, surpriseRoom10, surpriseRoom11));
         Castle castle = new Castle(roomList);
+
+        Npc cleric1 = new Cleric("Dulgren");
+        Npc cleric2 = new Cleric("Artanis");
+
+        Random rand = new Random();
+        int randomRoomIndex1 = rand.nextInt(castle.getRoomList().size() - 7) + 2; //Room index between 2-6 4
+        int randomRoomIndex2 = rand.nextInt(castle.getRoomList().size() - 8) + 7; //Room index between 7-10
+
+        castle.getRoomList().get(randomRoomIndex1).addNpcToRoom(cleric1);
+        castle.getRoomList().get(randomRoomIndex2).addNpcToRoom(cleric2);
+
 
         Scanner scan = new Scanner(System.in);
 
@@ -91,14 +105,25 @@ public class Runner {
 
 
         while (!exit) {
-            System.out.println("You are in " + player1.getCurrentRoom().getName() + ". What would you like to do?");
             ArrayList<String> availableActions = new ArrayList();
-            availableActions.addAll(Arrays.asList("search", "next room", "view pack", "check health", "eat chocolate", "quit"));
+            availableActions.addAll(Arrays.asList("search room", "next room", "view pack", "check health", "eat chocolate", "quit"));
+
+            System.out.println("You are in the " + player1.getCurrentRoom().getName()+ ".");
+            if (player1.getCurrentRoom().getNpcOccupants().size() > 0) {
+                System.out.println(player1.getCurrentRoom().getNpcOccupants().get(0).meetPlayer());
+                availableActions.add(0, "ask cleric for healing");
+            }
+            System.out.println("What would you like to do?");
             System.out.println("Available actions: " + availableActions);
             String action = scan.nextLine();
 
             switch (action) {
-                case "search":
+                case "ask cleric for healing": Cleric cleric = (Cleric) player1.getCurrentRoom().getNpcOccupants().get(0);
+                                               System.out.println(cleric.heal(player1));
+                                               player1.getCurrentRoom().removeNpc();;
+                                               availableActions.remove("ask cleric for healing");
+                                               break;
+                case "search room":
                     System.out.println(player1.searchRoom());
                     ISurprise surprise = player1.getCurrentRoom().getSurprise();
                     if (surprise != null && surprise.isTreasure()) {

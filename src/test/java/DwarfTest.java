@@ -35,13 +35,14 @@ public class DwarfTest {
         assertEquals(0, dwarf1.getPack().size());
     }
 
-    @Test
-    public void canFight() {
-        assertEquals(3, dwarf1.dealDamage());
-    }
+    //Damage has been randomised, so the test below won't always pass
+//    @Test
+//    public void canFight() {
+//        assertEquals(3, dwarf1.dealDamage());
+//    }
 
     @Test
     public void dwarfHasBattleCry() {
-        assertEquals("Baruk Khazâd! Khazâd ai-mênu!", dwarf1.battleCry());
+        assertEquals("\"Baruk Khazâd! Khazâd ai-mênu!\"", dwarf1.battleCry());
     }
 }

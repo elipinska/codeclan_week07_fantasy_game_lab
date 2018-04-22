@@ -28,7 +28,7 @@ public class RoomTest {
 
     @Test
     public void roomHasEmptyArrayOfOccupants() {
-        assertEquals(0, room1.getOccupants().size());          assertEquals(0, room2.getOccupants().size());
+        assertEquals(0, room1.getPlayerOccupants().size());          assertEquals(0, room2.getPlayerOccupants().size());
     }
 
     @Test

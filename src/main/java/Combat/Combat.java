@@ -1,5 +1,6 @@
 package Combat;
 
+import Npcs.Healers.Cleric;
 import Players.Fighters.Fighter;
 import Players.Player;
 import Surprises.Enemy;
@@ -31,4 +32,5 @@ public class Combat {
         }
         return result;
     }
+
 }
