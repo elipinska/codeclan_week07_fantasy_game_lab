@@ -1,14 +1,14 @@
-#Original spec for the lab:
-#Castle Capture - simple fantasy adventure game in Java
 
-#Update
+# Castle Capture - simple fantasy adventure game in Java
+
+## Update
 
 As part of weekend homework, I extended the spec below to include a runner file, which makes in possible to play a simple game of Castle Capture. You can choose your player race (dwarf, barbarian or knight), pick your weapon (bow, axe or sword) and then embark on an adventure which will take you through 12 chambers of a castle. You will collect treasures and fight evil monsters; if you're lucky, you'll come across a cleric who will offer to heal some of your wounds in exchange for gold (eating chocolate will help you get better too!).
 
 
-#Original spec for the lab:
+# Original spec for the lab:
 
-# Lab - Fantasy Adventure
+## Lab - Fantasy Adventure
 
 The task is to model a fantasy adventure. The game will have players, who will have a number of health points and weapons/spells. Players will fall into different categories:
 
