@@ -38,11 +38,11 @@ public class KnightTest {
 
     @Test
     public void canFight() {
-        assertEquals(5, knight1.dealDamage());
+        assertEquals(10, knight1.dealDamage());
     }
 
     @Test
     public void knightHasBattleCry() {
-        assertEquals("For king and country!", knight1.battleCry());
+        assertEquals("\"For king and country!\"", knight1.battleCry());
     }
 }
