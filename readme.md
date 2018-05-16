@@ -1,9 +1,13 @@
 
-# Castle Capture - simple fantasy adventure game in Java
+# Castle Capture - text-based fantasy adventure game in Java
 
 ## Update
 
 As part of weekend homework, I extended the spec below to include a runner file, which makes in possible to play a simple game of Castle Capture. You can choose your player race (dwarf, barbarian or knight), pick your weapon (bow, axe or sword) and then embark on an adventure which will take you through 12 chambers of a castle. You will collect treasures and fight evil monsters; if you're lucky, you'll come across a cleric who will offer to heal some of your wounds in exchange for gold (eating chocolate will help you get better too!).
+
+### To run the game in the command line:
+* download the CastleCapture.jar file
+* in the command line, use the command ```java -jar CastleCapture.jar```	
 
 
 # Original spec for the lab:
