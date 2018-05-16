@@ -3,7 +3,7 @@
 
 ## Update
 
-As part of weekend homework, I extended the spec below to include a runner file, which makes in possible to play a simple game of Castle Capture. You can choose your player race (dwarf, barbarian or knight), pick your weapon (bow, axe or sword) and then embark on an adventure which will take you through 12 chambers of a castle. You will collect treasures and fight evil monsters; if you're lucky, you'll come across a cleric who will offer to heal some of your wounds in exchange for gold (eating chocolate will help you get better too!).
+As part of weekend homework aimed at <b>practicing polymorphism (through the use of inheritance, interfaces and method overloading/overriding) in Java</b>, I extended the spec below to include a runner file, which makes in possible to play a simple game of Castle Capture. You can choose your player race (dwarf, barbarian or knight), pick your weapon (bow, axe or sword) and then embark on an adventure which will take you through 12 chambers of a castle. You will collect treasures and fight evil monsters; if you're lucky, you'll come across a cleric who will offer to heal some of your wounds in exchange for gold (eating chocolate will help you get better too!).
 
 ### To run the game in the command line:
 * download the CastleCapture.jar file
@@ -37,9 +37,4 @@ The game will also have rooms to work through. Each room should either have some
 
 * Create the players and rooms for the adventure. (Don't worry about giving the rooms any exits.)
 * Give different players properties/methods that are specific to their own class. (e.g. a Knight could have armour that could reduce damage they take)
-* The user should complete rooms by either collecting treasure or defeating an enemy and a new room will be presented to them.  
-
-## Extensions
-
-* Create a Quest for the players to work through. Possibly a collection of rooms to go through and the quest completes when all rooms are completed
-* Expand any other way you wish.
+* The user should complete rooms by either collecting treasure or defeating an enemy and a new room will be presented to them. 
