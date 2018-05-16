@@ -7,7 +7,7 @@ As part of weekend homework, I extended the spec below to include a runner file,
 
 ### To run the game in the command line:
 * download the CastleCapture.jar file
-* in the command line, use the command ```java -jar CastleCapture.jar```	
+* in the terminal, use the command ```java -jar CastleCapture.jar```	
 
 
 # Original spec for the lab:
